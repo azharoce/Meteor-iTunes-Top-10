@@ -1,0 +1,46 @@
+<head>
+    <title>Top Songs</title>
+    <style type="text/css">
+    body {
+        margin: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    {{> topsongs}}
+</body>
+
+<template name="topsongs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Top Songs</h3>
+                    </div>
+                    <ul class="list-group">
+                        {{#each topsongs}}
+                        {{> topsong}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="topsong">
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{image}}"> <a href="{{link}}" target="_blank">{{title}}</a>
+            </div>
+            <div class="col-md-6">
+                <audio controls preload="none" style="width:200px;" class="pull-right">
+                    <source src="{{preview}}" type="audio/mp4">
+                    </audio>
+                </div>
+            </div>
+        </li>
+</template>
